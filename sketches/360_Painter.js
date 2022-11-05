@@ -13,12 +13,12 @@ const title_name = "My Autoportrait"
 
 //Default values Tweakpane
 const params= {
-  Population: 10, //density lines
-  Land: 8, //width
-  Age: 10, //greyscale color
-  Happy: 5, //neat-blur
-  CO2_Impact: 4, //blue
-  Color: '#ff0055',
+  Population: 1, //density lines
+  Land: 1, //width
+  Age: 1, //greyscale color
+  Happy: 1, //neat-blur
+  CO2_Impact: 1, //stain
+  Color: '#ff5c00',
 }
 
 //Variable setting random starting point the canvas
@@ -153,13 +153,12 @@ for (let i =0; i <scalePop; i++){
   };
 
   //Title cosmetics and center
-  const title = "My Autoportrait";
+  const title = "Home";
   context.fillStyle = '#313131';
   context.font = "70px futura";
   const titleCenter = centerX(title);
   context.fillText(title, titleCenter, 1000);
   context.restore()
-
 
   //Title serie name + font
   const serie = "ⓒ HumAIn_Art" //"Variations of π (pi)"
@@ -177,7 +176,7 @@ const createPane = () => {
 
   let folder;
 
-  folder = pane.addFolder({ title : "Profile Yourself"});
+  folder = pane.addFolder({ title : "Paint your country. 1=low 10=high"});
   folder.addInput(params, 'Population', { min: 1, max: 10 });
   folder.addInput(params, 'Land', { min: 1, max: 10 });
   folder.addInput(params, 'Age', { min: 1, max: 10 });
