@@ -152,17 +152,25 @@ for (let i =0; i <scalePop; i++){
   return (width/2) - (textWidth/2)
   };
 
-  //Title cosmetics and center
-  const title = "Home";
+  //Title line1 and center
+  const title = "Europe";
   context.fillStyle = '#313131';
   context.font = "70px futura";
   const titleCenter = centerX(title);
-  context.fillText(title, titleCenter, 1000);
+  context.fillText(title, titleCenter, 950);
+  context.restore()
+
+  //Title line2 and center
+  const subtitle = " Designed by... me";
+  context.fillStyle = '#313131';
+  context.font = "italic 30px futura";
+  const subtitleCenter = centerX(subtitle);
+  context.fillText(subtitle, subtitleCenter, 1000);
   context.restore()
 
   //Title serie name + font
   const serie = "ⓒ HumAIn_Art" //"Variations of π (pi)"
-  context.font = "20px futura";
+  context.font = "10px futura";
   const serieCenter = centerX(serie)
   context.fillText(serie, serieCenter, 1050)
   context.restore()
@@ -176,7 +184,7 @@ const createPane = () => {
 
   let folder;
 
-  folder = pane.addFolder({ title : "Paint your country. 1=low 10=high"});
+  folder = pane.addFolder({ title : "Paint Europe. 1=low 10=high"});
   folder.addInput(params, 'Population', { min: 1, max: 10 });
   folder.addInput(params, 'Land', { min: 1, max: 10 });
   folder.addInput(params, 'Age', { min: 1, max: 10 });
